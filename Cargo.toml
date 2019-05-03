@@ -1,0 +1,11 @@
+[package]
+name = "svgcode"
+version = "0.1.0"
+authors = ["José Luis C.D. <jlcd0003@red.ujaen.es>"]
+edition = "2018"
+
+[dependencies]
+cgmath = "0.17.0"
+usvg = "0.6.1"
+lyon_path = "0.13.1"
+structopt = "0.2.15"
