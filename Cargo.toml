@@ -5,7 +5,7 @@ authors = ["José Luis C.D. <jlcd0003@red.ujaen.es>"]
 edition = "2018"
 
 [dependencies]
-cgmath = "0.17.0"
-usvg = "0.6.1"
-lyon_path = "0.13.1"
-structopt = "0.2.15"
+cgmath = "^0.18"
+usvg = "^0.7"
+lyon_path = "^0.14"
+clap = { version = "^4.5", features = ["derive"] }

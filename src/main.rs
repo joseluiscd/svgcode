@@ -1,31 +1,30 @@
 extern crate svgcode;
-#[macro_use]
-extern crate structopt;
 
 use svgcode::input::Parser;
 use svgcode::output::Exporter;
-use structopt::StructOpt;
 use std::path::PathBuf;
 use svgcode::input::svg::SvgParser;
 use svgcode::output::gcode::GcodeExporter;
 
-#[derive(StructOpt, Debug)]
+#[derive(clap::Parser, Debug)]
+#[command(version, about, long_about = None)]
 struct Cmdline{
     /// Input file
-    #[structopt(short="i", long="input",  parse(from_os_str))]
+    #[arg(short='i', long="input")]
     input: PathBuf,
 
     /// Output file
-    #[structopt(short="o", long="output", parse(from_os_str))]
+    #[arg(short='o', long="output")]
     output: PathBuf,
 
     /// Input format
-    #[structopt(short="f", long="format", default_value="svg")]
+    #[arg(short='f', long="format", default_value="svg")]
     format: String
 }
 
 fn main() -> Result<(), std::io::Error> {
-    let cmdline = Cmdline::from_args();
+    use clap::Parser;
+    let cmdline = Cmdline::parse();
 
     println!("Miau-starting");
 

@@ -60,7 +60,7 @@ impl <'a> Parser for SvgParser<'a> {
                                 point(x1 as f32, y1 as f32),
                                 point(x2 as f32, y2 as f32),
                                 point(x as f32, y as f32)
-                            )
+                            );
                         },
                         PathSegment::ClosePath => {
                             builder.close()
